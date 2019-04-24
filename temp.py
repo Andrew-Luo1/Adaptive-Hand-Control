@@ -2,12 +2,12 @@ import serial
 import serial.tools.list_ports
 import time
 
-#file writing
+#List writing. 
 from datetime import datetime
 import csv
 
-actual_path = [[1,1,1,1],[2,1],[3,1]]
-target_path = [[2,2,2,3],[4,1],[4,1]]
+actual_path = [[1,1,1,1],[2,1,2,2],[3,1,3,4]]
+target_path = [[2,2,2,3],[4,1,4,1],[4,1,6,4]]
 
 cur_date = datetime.now()
 cur_date = cur_date.timetuple()
@@ -25,6 +25,8 @@ with open(file_name, 'w') as csvfile:
     for i in range(len(actual_path)):
 	    spamwriter.writerow([str(actual_path[i]), str(target_path[i])])
 
+
+#List reading. 
 actual_list = []
 target_list = []
 

@@ -7,8 +7,11 @@ from abr_control.interfaces import PROSTHETIC_HAND
 # ctrlr = OSC(robot_config)
 interface = PROSTHETIC_HAND()
 
-# interface.connect()
-
+interface.connect()
+while True: 
+	feedback = interface.get_feedback()
+	print feedback
+	
 # target_xyz = [.2, .2, .5]  # in metres
 # for ii in range(1000):
 #     feedback = interface.get_feedback()  # returns a dictionary with q, dq
